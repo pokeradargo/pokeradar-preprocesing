@@ -4,7 +4,7 @@ from queue import *
 
 
 def worker(my_queue):
-    repository = MongoRepository('188.226.152.151', 25025)
+    repository = MongoRepository('poke-mongo', 25025)
     while True:
         while not my_queue.empty():
             item = my_queue.get()
