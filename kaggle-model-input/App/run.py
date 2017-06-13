@@ -3,7 +3,7 @@ from Infrastructure.Workers.PreprocessingWorker import *
 
 
 def main():
-    repository = MongoRepository('poke-mongo', 5432)
+    repository = MongoRepository('poke-mongo', 27017)
     collection = repository.get_all()
     start_queue(collection=collection)
 
