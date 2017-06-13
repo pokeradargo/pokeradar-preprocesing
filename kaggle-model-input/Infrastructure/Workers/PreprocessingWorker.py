@@ -15,7 +15,7 @@ def worker(my_queue):
 def start_queue(collection):
     my_queue = Queue(maxsize=0)
     # NOTE: use only one thread if calculate_co_relations is active
-    for i in range(5):
+    for i in range(1):
         thread = Thread(target=worker, args=(my_queue,))
         thread.setDaemon(True)
         thread.start()
