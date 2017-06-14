@@ -3,6 +3,7 @@ from Infrastructure.Services.LocationPreProcessingService import LocationPreProc
 from Infrastructure.Services.TimePreProcessingService import TimePreProcessingService
 from Infrastructure.Services.WeatherPreProcessingService import WeatherPreProcessingService
 from Infrastructure.Services.CoRelationsService import CoRelationsService
+from Infrastructure.Repositories.ElasticSearchRepository import ElasticSearchRepository
 
 
 class MongoRepository:
@@ -71,6 +72,8 @@ class MongoRepository:
         )
 
     def persist_item(self, item):
-        client = MongoClient(self.ServerIp, self.ServerPort)
-        db = client['datainput']
-        db['datainput'].insert_one(item)
+        # client = MongoClient(self.ServerIp, self.ServerPort)
+        # db = client['datainput']
+        # db['datainput'].insert_one(item)
+        client = ElasticSearchRepository()
+        client.persist_item(item)
