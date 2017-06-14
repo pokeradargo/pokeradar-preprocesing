@@ -4,7 +4,7 @@ from queue import *
 
 
 def worker(my_queue):
-    repository = MongoRepository('poke-mongo', 27017)
+    repository = MongoRepository()
     while True:
         while not my_queue.empty():
             item = my_queue.get()
@@ -15,7 +15,7 @@ def worker(my_queue):
 def start_queue(collection):
     my_queue = Queue(maxsize=0)
     # NOTE: use only one thread if calculate_co_relations is active
-    for i in range(1):
+    for i in range(5):
         thread = Thread(target=worker, args=(my_queue,))
         thread.setDaemon(True)
         thread.start()

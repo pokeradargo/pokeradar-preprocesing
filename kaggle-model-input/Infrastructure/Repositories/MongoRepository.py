@@ -6,12 +6,8 @@ from Infrastructure.Services.CoRelationsService import CoRelationsService
 
 
 class MongoRepository:
-    ServerIp = ''
-    ServerPort = ''
-
-    def __init__(self, server_ip, server_port):
-        self.ServerIp = server_ip
-        self.ServerPort = server_port
+    ServerIp = 'poke-mongo'
+    ServerPort = 27017
 
     def connect_to_database(self):
         client = MongoClient(self.ServerIp, self.ServerPort)
