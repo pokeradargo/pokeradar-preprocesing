@@ -17,7 +17,7 @@ class WeatherPreProcessingService:
             float(item.get('windSpeed'))
         )
         weather_icon = WeatherIconDefinitionService.get_weather_icon_definition(
-            item.get('WeatherIcon')
+            item.get('weatherIcon')
         )
         return {
             'temperature': temperature,

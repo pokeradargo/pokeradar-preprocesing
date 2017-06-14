@@ -2,7 +2,7 @@ from elasticsearch import Elasticsearch
 
 
 class ElasticSearchRepository:
-    ServerIp = "poke-elasticsearch"
+    ServerIp = "pokeradar-elastic-master-dev.sandbox"
     ServerPort = 9200
 
     def connect_to_database(self):
